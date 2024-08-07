@@ -1,0 +1,15 @@
+:root {
+  --main-color: #8758ff;
+}
+
+body {
+  margin: 0;
+}
+
+.App {
+  height: 100vh;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
