@@ -24,6 +24,17 @@ const Card = () => {
       )
     );
   };
+
+  const editTask = (taskDesc, id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id
+          ? { ...todo, todoDesc: taskDesc, isEditing: !todo.isEditing }
+          : todo
+      )
+    );
+  };
+
   return (
     <div className="card">
       <h1>Get things done!</h1>
@@ -37,8 +48,10 @@ const Card = () => {
           <Editinput
             placeholderText="Edit your task"
             textButton="Edit task"
-            addTodo={addTodo}
+            editTodo={editTask}
             key={index}
+            todoDesc={todo.todoDesc}
+            id={todo.id}
           />
         ) : (
           <Todo
